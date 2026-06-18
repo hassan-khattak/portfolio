@@ -1,45 +1,47 @@
 # Portfolio
 
-A minimal portfolio project containing a single `index.html`. This README gives quick steps to start and develop locally.
+A small, static portfolio site. Recent cleanup: CSS has been moved to `styles/style.css` and JavaScript moved to `scripts/main.js` so the project is easier to maintain.
 
 ## Quick start
 
-- Open the site directly in your browser:
+- Open in your browser:
 
   - macOS: `open index.html`
-  - or double-click `index.html` in Finder
 
-- Serve on a local HTTP server (recommended for testing things like fetch or routing):
+- Serve locally (recommended):
 
-  - Python 3 (works on macOS):
+  - Python 3 (example uses port 8080):
 
     ```bash
-    python3 -m http.server 8000
-    open http://localhost:8000
+    python3 -m http.server 8080
+    open http://localhost:8080
     ```
+
+  - Or use any static file server (live-server, http-server, etc.).
 
 ## Project structure
 
-- `index.html` — the entry point for the portfolio site.
+- `index.html` — entry point and simple HTML shell.
+- `styles/style.css` — main stylesheet (extracted from the HTML).
+- `scripts/main.js` — main UI scripts (matrix effect, terminal demo, smooth scroll, mobile nav, reveal animations).
+- `assets/` — (suggested) images, icons, and media.
 
 ## Development notes
 
-- Add `styles/` for CSS and `assets/` for images and media.
-- Use a simple build tool or bundler only when needed (e.g., for SASS, TypeScript, or heavy JS).
+- The HTML is intentionally minimal — presentational code lives in `styles/` and `scripts/`.
+- Start the dev server (see Quick start) and open the site to verify assets load.
+- To add build tooling (SASS/TypeScript/bundling), initialize npm and add a simple build step.
 
-## Deployment
+## Recommended next steps
 
-- GitHub Pages: push to a repository and enable Pages in the repo settings (use `main` or `gh-pages` branch).
-- Netlify / Vercel: drag-and-drop the site folder or connect the repo for automatic deploys.
+1. Add a `.gitignore` (e.g., `.DS_Store`, `node_modules/`).
+2. Add a `LICENSE` file (MIT recommended if you want permissive licensing).
+3. Add meta tags (description, Open Graph) and a `favicon.ico` for better sharing and polish.
+4. (Optional) Initialize npm and add a dev script for a live server (e.g., `live-server` or `http-server`).
 
-## Next steps (suggested)
+## How I verified
 
-1. Add a `LICENSE` file.
-2. Create a `styles/` folder and a base CSS file.
-3. Add metadata to `index.html` (title, description, social preview images).
-4. Initialize a git repo if you haven't: `git init && git add . && git commit -m "initial"`.
-
-If you'd like, I can: add a starter CSS, wire up a contact form, or scaffold a simple build flow — tell me which and I'll implement it.
+- Confirmed `styles/style.css` and `scripts/main.js` are present and served by a local Python server on port 8080.
 
 ---
 
